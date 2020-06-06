@@ -12,7 +12,7 @@ That's it.
 
 ## FAQ
 ### What exactly is synced between users?
-If a player finds any of the following items, they will also be added to every other players inventory:
+If a player finds any of the following items, they will also be added to every other player's inventory:
 * Ocarina of Time
 * Hero's Bow
 * Fire Arrow
