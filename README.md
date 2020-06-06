@@ -67,6 +67,10 @@ Make sure that you delete MMR.json before starting the server. Otherwise it will
 ### You should sync quest items, like the Title Deeds and Room Key.
 If an option to make them permanent is ever added to the randomizer, then an option to sync them will probably be added to this as well.
 
+### I don't like Retroarch, can I use something else?
+Unfortunately, the client is only capable of communicating with Retroarch.<br />
+The server, however, doesn't communicate directly with the emulator at all, so if somebody wishes to write a program or script for another emulator that sends the proper data to the server, it should be possible for that emulator to sync with the server.
+
 ### Your UI is bad! Make it prettier!
 I can't make the UI prettier if the program doesn't really have one :)
 
