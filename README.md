@@ -12,7 +12,7 @@ That's it.
 
 ## FAQ
 ### What exactly is synced between users?
-If a player finds any of the following items, they will also be given to every other player:
+If a player finds any of the following items, they will also be added to every other players inventory:
 * Ocarina of Time
 * Hero's Bow
 * Fire Arrow
@@ -40,7 +40,7 @@ If a player finds any of the following items, they will also be given to every o
 * Magic Meter
 * Great Spin Attack
 * Double Defense
-* Bomber's Notebook
+* Bomber's Notebook (but not completed quests)
 * Boss remains
 * Owl statues activated
 * Total Stray Fairies collected
