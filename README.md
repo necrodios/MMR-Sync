@@ -68,7 +68,7 @@ Make sure that you delete MMR.json before starting the server. Otherwise it will
 If an option to make them permanent is ever added to the randomizer, then an option to sync them will probably be added to this as well.
 
 ### Your UI is bad! Make it prettier!
-I can't make the UI prettier if the program doesn't actually have one :)
+I can't make the UI prettier if the program doesn't really have one :)
 
 ### I'm a programmer and this is the most horrifying thing I've ever laid my eyes on.
 I smashed my face on a keyboard until something functional came out. I wrote a program that relies heavily on networking and I still don't actually understand how network protocols actually work. The amount of Python programs I've completed before this can be counted on one hand. The fact that this actually works is a miracle of the universe.
