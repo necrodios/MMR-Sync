@@ -3,14 +3,21 @@ import json
 import os.path
 import sys
 from time import sleep
+import configparser
 
 import Items
 
-datafile = os.path.join(sys.path[0], "MMR.json")
-serverIP = (input("Enter Server IP: "), 50000)
+config = configparser.ConfigParser()
+config.read(os.path.join(sys.path[0], 'config.ini'))
+
+datafile = os.path.join(sys.path[0], config['Server']['save data file'])
+serverIP = (config['Server']['ip'], 
+            config['Server'].getint('port'))
 
 mysocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 mysocket.settimeout(10.0)
+
+print("Server IP: " + str(serverIP))
 
 def send(target, message):
     mysocket.sendto(message.encode('utf-8'), target)
@@ -37,7 +44,8 @@ def readfile(file):
         return json.loads(f.read())
         f.close()
     except FileNotFoundError:
-        print("\"MMR.json\" not found. A new dictionary will be created.")
+    
+        print("\"" + config['Server']['save data file'] + "\" not found. A new dictionary will be created.")
         return {}
 
 def splitbyte(value,bits):
