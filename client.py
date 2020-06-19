@@ -3,11 +3,20 @@ import json
 import os.path
 import sys
 from time import sleep
+import configparser
 
 import Items
 
-serverIP = (input("Enter Host IP: "), 50000)
-retroarchIP = ("localhost", 55355) #("127.0.0.1", 55355)
+config = configparser.ConfigParser()
+config.read(os.path.join(sys.path[0], 'config.ini'))
+
+serverIP = (config['Server']['ip'], 
+            config['Server'].getint('port'))
+retroarchIP = (config['Retroarch']['ip'], 
+               config['Retroarch'].getint('port'))
+
+print("Server IP: " + str(serverIP))
+print("Retroarch IP: " + str(retroarchIP))
 
 romdata = {'DataVersion': 0} #romdata = {}
 serverdata = {'DataVersion': 0}
@@ -50,10 +59,12 @@ def pingserver(sentdata):
     try:
         data, server = mysocket.recvfrom(1024)
         serverdata = json.loads(data)
+        print("Data sent to " + str(serverIP))
     except ConnectionResetError:
         print("Cannot connect to server")
+        sleep(5)
+        pingserver(sentdata)
     except socket.timeout:
-        #print('No response received from server.')
         pass
 
 def comparedata():
